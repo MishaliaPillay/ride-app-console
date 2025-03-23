@@ -1,10 +1,15 @@
-﻿namespace Ride_app
+﻿using Ride_app.Presentation.Menus;
+
+namespace Ride_app
 {
-    internal class Program
+    public class Program
     {
+        MainMenu menu = new MainMenu();
         static void Main(string[] args)
         {
+            Program program = new Program();
             Console.WriteLine("Hello, World!");
+            program.menu.MainMenuOptions();
         }
     }
 }

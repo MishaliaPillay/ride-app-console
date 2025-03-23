@@ -7,7 +7,7 @@ using Ride_app.Enities;
 
 namespace Ride_app.Enities
 {
-    internal class Ride
+    public class Ride
     {
         private Location _pickUp { get; set; }
         private Location _dropOff { get; set; }
