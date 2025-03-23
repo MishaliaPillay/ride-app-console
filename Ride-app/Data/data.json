@@ -1,1 +1,35 @@
-
+[
+  {
+    "_location": {
+      "_latitude": 0.0,
+      "_longitude": 0.0
+    },
+    "_name": "wyatt",
+    "_password": "wyatt123",
+    "_wallet": 100.50,
+    "_id": 0,
+    "_isDriver": false
+  },
+  {
+    "_location": {
+      "_latitude": 0.0,
+      "_longitude": 0.0
+    },
+    "_name": "mishi",
+    "_password": "mishi123",
+    "_wallet": 100.50,
+    "_id": 1,
+    "_isDriver": false
+  },
+  {
+    "_location": {
+      "_latitude": 0.0,
+      "_longitude": 0.0
+    },
+    "_name": "kevin",
+    "_password": "kevin123",
+    "_wallet": 100.50,
+    "_id": 2,
+    "_isDriver": true
+  }
+]

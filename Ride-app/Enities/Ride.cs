@@ -9,11 +9,23 @@ namespace Ride_app.Enities
 {
     public class Ride
     {
-        private Location _pickUp { get; set; }
-        private Location _dropOff { get; set; }
-        private Passenger _passenger { get; set; }
-        private Driver _driver { get; set; }
-        private int _rating { get; set; }
-        private decimal _rate { get; set; }
+        public int rideID;
+        public Location _pickUp { get; set; }
+        public Location _dropOff { get; set; }
+        public int _passengerID { get; set; }
+        public int _driverID { get; set; }
+        public int _rating { get; set; }
+        public decimal _rate { get; set; }
+
+        public Ride(Location pickUp, Location dropOff)
+        {
+            _pickUp = pickUp;
+            _dropOff = dropOff;
+            _passengerID = -1;
+            _driverID = -1;
+            _rating = 0;
+            _rate = 0M;
+        }
+
     }
 }
