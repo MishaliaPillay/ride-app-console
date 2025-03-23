@@ -1,70 +1,35 @@
 [
   {
-    "_rides": [
-      {
-        "_pickUp": {
-          "_latitude": 10.0,
-          "_longitude": 10.0
-        },
-        "_dropOff": {
-          "_latitude": 0.0,
-          "_longitude": 0.0
-        },
-        "_passenger": null,
-        "_driver": null,
-        "_rating": 0,
-        "_rate": 0.0
-      },
-      {
-        "_pickUp": {
-          "_latitude": -10.0,
-          "_longitude": -10.0
-        },
-        "_dropOff": {
-          "_latitude": 31.0,
-          "_longitude": 21.0
-        },
-        "_passenger": null,
-        "_driver": null,
-        "_rating": 0,
-        "_rate": 0.0
-      }
-    ],
     "_location": {
       "_latitude": 0.0,
       "_longitude": 0.0
     },
-    "_name": "Kevin",
-    "_password": "123",
+    "_name": "wyatt",
+    "_password": "wyatt123",
     "_wallet": 100.50,
     "_id": 0,
     "_isDriver": false
   },
   {
-    "_rides": [
-      {
-        "_pickUp": {
-          "_latitude": 100.0,
-          "_longitude": 100.0
-        },
-        "_dropOff": {
-          "_latitude": 20.0,
-          "_longitude": 20.0
-        },
-        "_passenger": null,
-        "_driver": null,
-        "_rating": 0,
-        "_rate": 0.0
-      }
-    ],
     "_location": {
       "_latitude": 0.0,
       "_longitude": 0.0
     },
-    "_name": "Wyatt",
-    "_password": "234",
+    "_name": "mishi",
+    "_password": "mishi123",
     "_wallet": 100.50,
     "_id": 1,
     "_isDriver": false
+  },
+  {
+    "_location": {
+      "_latitude": 0.0,
+      "_longitude": 0.0
+    },
+    "_name": "kevin",
+    "_password": "kevin123",
+    "_wallet": 100.50,
+    "_id": 2,
+    "_isDriver": true
   }
 ]

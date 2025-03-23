@@ -15,13 +15,41 @@ namespace Ride_app.Infrastructure.Repositories
 
         private static readonly string JsonFilePath = "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\data.json";
 
-        public void AddNewUser(User user)
+        public UserRepository()
         {
-            if (File.Exists(JsonFilePath))
-            {
-                users.Add(user);
+            LoadFromFile();
+        }
 
-                SaveToFile();
+        private void LoadFromFile()
+        {
+            try
+            {
+                if (File.Exists(JsonFilePath))
+                {
+                    string jsonData = File.ReadAllText(JsonFilePath);
+                    users = JsonConvert.DeserializeObject<List<User>>(jsonData) ?? new List<User>();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error loading from JSON file: " + ex.Message);
+                users = new List<User>();
+            }
+        }
+
+        public Decimal GetUserWallet(int id)
+        {
+
+            try
+            {
+
+                User user = users.Where(u => u._id == id).FirstOrDefault();
+                return user._wallet;
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex.Message);
+                return -1;
             }
         }
 
@@ -63,7 +91,7 @@ namespace Ride_app.Infrastructure.Repositories
         {
             try
             {
-                User userToUpdate = users.Where(u => u._id == id).First();
+                User userToUpdate = users.Where(u => u._id == id).FirstOrDefault();
 
                 if (userToUpdate is Driver driverToUpdate)
                 {
@@ -73,9 +101,6 @@ namespace Ride_app.Infrastructure.Repositories
                     driverToUpdate._name = driver._name;
                     driverToUpdate._rating = driver._rating;
                     driverToUpdate._isAvailable = driver._isAvailable;
-
-
-                    driverToUpdate._completedRides.Add(driver._completedRides.First());
 
                     SaveToFile();
                 }
@@ -92,7 +117,7 @@ namespace Ride_app.Infrastructure.Repositories
         {
             try
             {
-                User userToUpdate = users.Where(u => u._id == id).First();
+                User userToUpdate = users.Where(u => u._id == id).FirstOrDefault();
 
                 if (userToUpdate is Passenger passengerToUpdate)
                 {
@@ -100,8 +125,7 @@ namespace Ride_app.Infrastructure.Repositories
                     passengerToUpdate._name = passenger._name;
                     passengerToUpdate._location = passenger._location;
                     passengerToUpdate._password = passenger._password;
-                    //passengerToUpdate._rides = passenger._rides;
-                    passengerToUpdate._rides.Add(passenger._rides.First());
+
                     SaveToFile();
                 }
                 else
@@ -111,24 +135,23 @@ namespace Ride_app.Infrastructure.Repositories
             }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
         }
-        public void AddUserRide(int id, Ride ride)
+        public void AddUserRide(int id, int rideID)
         {
-            User user = users.Where(u => u._id == id).First();
+            User user = users.Where(u => u._id == id).FirstOrDefault();
             if (user is Passenger passenger)
             {
-                passenger._rides.Add(ride);
+                passenger.rideIDs.Add(rideID);
             }
             SaveToFile();
         }
         public User FindUser(int id)
         {
-            Console.WriteLine("Finding users, and there are this many users: " + users.Count() + "we are lookoing for user id: " + id);
-            return users.Where(u => u._id == id).First();
+            return users.Where(u => u._id == id).FirstOrDefault();
         }
 
         public bool FindUsername(string username)
         {
-            User user = users.Where(u => u._name == username).First();
+            User user = users.Where(u => u._name == username).FirstOrDefault();
             if (user != null)
             {
                 return true;
@@ -141,7 +164,7 @@ namespace Ride_app.Infrastructure.Repositories
 
         public bool CheckPassword(string username, string password)
         {
-            User user = users.Where(u => u._name == username).First();
+            User user = users.Where(u => u._name == username).FirstOrDefault();
             if (user._password == password)
             {
                 return true;
@@ -153,8 +176,22 @@ namespace Ride_app.Infrastructure.Repositories
         }
         public int GetUserID(string username)
         {
-            User user = users.Where(u => u._name == username).First();
+            User user = users.Where(u => u._name == username).FirstOrDefault();
             return user._id;
+        }
+        public Location GetUserLocation(int id)
+        {
+            try
+            {
+
+                User user = users.Where(u => u._id == id).FirstOrDefault();
+                return user._location;
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex.Message);
+                return null;
+            }
         }
     }
 }

@@ -18,8 +18,11 @@ namespace Ride_app.Presentation.Menus
         public void ShowPassengerMenu()
         {
             //Console.Clear();
+            string userName = userController.GetUsername();
+            Console.WriteLine("--- Passenger Dashboard --- " + userName);
             Console.WriteLine("1 - Request a ride");
             Console.WriteLine("2 - View Wallet");
+            Console.WriteLine("3 - Sign Out");
             int action = int.Parse(Console.ReadLine());
 
             switch (action)
@@ -34,6 +37,10 @@ namespace Ride_app.Presentation.Menus
                         ViewWallet();
                         break;
                     }
+                case 3:
+                    {
+                        return;
+                    }
                 default:
                     {
                         Console.WriteLine("Not a valid option");
@@ -44,7 +51,8 @@ namespace Ride_app.Presentation.Menus
         public void ViewWallet()
         {
             //Console.Clear();
-            Console.WriteLine("Show balance here");
+            decimal walletValue = userController.GetUserWallet();
+            Console.WriteLine("Show balance here: " + walletValue);
             Console.WriteLine("1 - Add to wallet");
             Console.WriteLine("2 - Exit");
             int action = int.Parse(Console.ReadLine());
@@ -67,11 +75,14 @@ namespace Ride_app.Presentation.Menus
                         break;
                     }
             }
+            ShowPassengerMenu();
 
         }
         public void RequestRide()
         {
+            //Console.Clear();
             userController.CreateRideRequest();
+            ShowPassengerMenu();
         }
     }
 }

@@ -127,7 +127,7 @@ namespace Ride_app.Presentation.Controllers
         {
 
             Console.Write("UserController as " + activeID);
-            //Console.Clear();
+            ////Console.Clear();
 
             Console.WriteLine("x - Select start location: ");
             float xStart = float.Parse(Console.ReadLine());
@@ -141,15 +141,17 @@ namespace Ride_app.Presentation.Controllers
             Console.WriteLine("y - Select dropoff location: ");
             float yEnd = float.Parse(Console.ReadLine());
 
-            Console.Write("UserController as " + activeID);
-
             userService.CreatePassengerRideRequest(xStart, yStart, xEnd, yEnd, activeID);
+        }
+        public Decimal GetUserWallet()
+        {
+            return userService.GetUserWallet(activeID);
         }
         public void UpdatePassengerWallet()
         {
             Console.WriteLine("Update wallet: ");
             decimal walletChange = decimal.Parse(Console.ReadLine());
-            Console.Clear();
+            //Console.Clear();
 
             userService.UpdatePassengerWallet(walletChange, activeID);
         }
@@ -166,7 +168,7 @@ namespace Ride_app.Presentation.Controllers
         {
             Console.WriteLine("Update wallet: ");
             decimal walletChange = decimal.Parse(Console.ReadLine());
-            Console.Clear();
+            //Console.Clear();
 
             userService.UpdateDriverWallet(walletChange, activeID);
         }
@@ -186,6 +188,29 @@ namespace Ride_app.Presentation.Controllers
         public bool CheckUserDriver()
         {
             return userService.IsDriver(activeID);
+        }
+        public string GetUsername()
+        {
+            return userService.GetUsername(activeID);
+        }
+
+        public List<Ride> GetDriverlessRides()
+        {
+            return userService.GetDriverlessRides(activeID);
+        }
+        public void ViewDriverRides()
+        {
+            int index = 1;
+            List<Ride> availableRides = GetDriverlessRides();
+
+
+            foreach (Ride ride in availableRides)
+            {
+                string passengerName = userService.GetUsername(ride._passengerID);
+                decimal ridePrice = Math.Round(ride._rate, 2);
+                Console.WriteLine(index + " - " + passengerName + " : R" + ridePrice + ", is this far away: " + Math.Round(ridePrice / 10, 0));
+                index++;
+            }
         }
     }
 }
