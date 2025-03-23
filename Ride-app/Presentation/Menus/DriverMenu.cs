@@ -47,7 +47,6 @@ namespace Ride_app.Presentation.Menus
         }
         public void ViewWallet()
         {
-            //Console.Clear();
             decimal walletValue = userController.GetUserWallet();
             Console.WriteLine("Show balance here: " + walletValue);
             Console.WriteLine("1 - Exit");
@@ -72,6 +71,7 @@ namespace Ride_app.Presentation.Menus
         public void ViewRides()
         {
             userController.ViewDriverRides();
+            ShowDriverMenu();
         }
     }
 }

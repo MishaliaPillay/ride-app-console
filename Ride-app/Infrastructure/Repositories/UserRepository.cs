@@ -27,7 +27,7 @@ namespace Ride_app.Infrastructure.Repositories
                 if (File.Exists(JsonFilePath))
                 {
                     string jsonData = File.ReadAllText(JsonFilePath);
-                    users = JsonConvert.DeserializeObject<List<User>>(jsonData) ?? new List<User>();
+                    users = JsonConvert.DeserializeObject<List<User>>(jsonData/*, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All }*/) ?? new List<User>();
                 }
             }
             catch (Exception ex)
@@ -79,7 +79,7 @@ namespace Ride_app.Infrastructure.Repositories
             {
 
                 Console.WriteLine("the list has this many objects - " + users.Count());
-                string JsonData = JsonConvert.SerializeObject(users, Formatting.Indented);
+                string JsonData = JsonConvert.SerializeObject(users, Formatting.Indented/*, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All }*/);
                 File.WriteAllText(JsonFilePath, JsonData);
             }
             catch (Exception ex)
@@ -111,7 +111,6 @@ namespace Ride_app.Infrastructure.Repositories
             }
             catch (Exception ex) { Console.WriteLine(ex.ToString()); }
         }
-
 
         public void UpdatePassenger(Passenger passenger, int id)
         {
@@ -161,6 +160,8 @@ namespace Ride_app.Infrastructure.Repositories
                 return false;
             }
         }
+
+
 
         public bool CheckPassword(string username, string password)
         {

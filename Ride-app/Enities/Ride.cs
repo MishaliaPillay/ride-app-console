@@ -14,6 +14,7 @@ namespace Ride_app.Enities
         public Location _dropOff { get; set; }
         public int _passengerID { get; set; }
         public int _driverID { get; set; }
+        public bool isComplete { get; set; }
         public int _rating { get; set; }
         public decimal _rate { get; set; }
 
@@ -25,6 +26,7 @@ namespace Ride_app.Enities
             _driverID = -1;
             _rating = 0;
             _rate = 0M;
+            isComplete = false;
         }
 
     }

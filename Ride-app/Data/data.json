@@ -1,35 +1,37 @@
 [
   {
+    "rideIDs": [
+      0,
+      1
+    ],
+    "_isAvailable": true,
+    "_rating": [
+      4
+    ],
     "_location": {
       "_latitude": 0.0,
       "_longitude": 0.0
     },
-    "_name": "wyatt",
-    "_password": "wyatt123",
-    "_wallet": 100.50,
+    "_name": "kev",
+    "_password": "123",
+    "_wallet": 166.55551275463990,
     "_id": 0,
-    "_isDriver": false
+    "_isDriver": true
   },
   {
+    "rideIDs": [
+      0,
+      1,
+      2
+    ],
     "_location": {
       "_latitude": 0.0,
       "_longitude": 0.0
     },
-    "_name": "mishi",
-    "_password": "mishi123",
-    "_wallet": 100.50,
+    "_name": "mish",
+    "_password": "123",
+    "_wallet": 34.44448724536010,
     "_id": 1,
     "_isDriver": false
-  },
-  {
-    "_location": {
-      "_latitude": 0.0,
-      "_longitude": 0.0
-    },
-    "_name": "kevin",
-    "_password": "kevin123",
-    "_wallet": 100.50,
-    "_id": 2,
-    "_isDriver": true
   }
 ]

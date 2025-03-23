@@ -2,46 +2,49 @@
   {
     "rideID": 0,
     "_pickUp": {
+      "_latitude": 5.0,
+      "_longitude": 2.0
+    },
+    "_dropOff": {
+      "_latitude": 2.0,
+      "_longitude": 2.0
+    },
+    "_passengerID": 1,
+    "_driverID": 0,
+    "isComplete": true,
+    "_rating": 4,
+    "_rate": 30.0
+  },
+  {
+    "rideID": 1,
+    "_pickUp": {
+      "_latitude": 7.0,
+      "_longitude": 6.0
+    },
+    "_dropOff": {
       "_latitude": 9.0,
-      "_longitude": 0.0
+      "_longitude": 9.0
     },
-    "_dropOff": {
-      "_latitude": 0.0,
-      "_longitude": 0.0
-    },
-    "_passengerID": 0,
-    "_driverID": -1,
+    "_passengerID": 1,
+    "_driverID": 0,
+    "isComplete": true,
     "_rating": 0,
-    "_rate": 90.0
+    "_rate": 36.05551275463990
   },
   {
-    "rideID": 0,
+    "rideID": 2,
     "_pickUp": {
-      "_latitude": 15.0,
-      "_longitude": 0.0
+      "_latitude": 6.0,
+      "_longitude": 2.0
     },
     "_dropOff": {
-      "_latitude": 0.0,
-      "_longitude": 0.0
-    },
-    "_passengerID": 0,
-    "_driverID": -1,
-    "_rating": 0,
-    "_rate": 150.0
-  },
-  {
-    "rideID": 0,
-    "_pickUp": {
-      "_latitude": -5.0,
-      "_longitude": 0.0
-    },
-    "_dropOff": {
-      "_latitude": 0.0,
-      "_longitude": 0.0
+      "_latitude": 3.0,
+      "_longitude": 3.0
     },
     "_passengerID": 1,
     "_driverID": -1,
+    "isComplete": false,
     "_rating": 0,
-    "_rate": 50.0
+    "_rate": 31.62277660168380
   }
 ]
