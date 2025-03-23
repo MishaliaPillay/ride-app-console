@@ -57,5 +57,90 @@ namespace Ride_app.Infrastructure.Repositories
                 Console.WriteLine($"Error saving to JSON file: {ex.Message}");
             }
         }
+        public void UpdateDriver(Driver driver, int id)
+        {
+            try
+            {
+                User userToUpdate = users.Where(u => u._id == id).First();
+
+                if (userToUpdate is Driver driverToUpdate)
+                {
+                    driverToUpdate._wallet = driver._wallet;
+                    driverToUpdate._password = driver._password;
+                    driverToUpdate._location = driver._location;
+                    driverToUpdate._name = driver._name;
+                    driverToUpdate._rating = driver._rating;
+                    driverToUpdate._isAvailable = driver._isAvailable;
+
+                    SaveToFile();
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+        }
+
+
+        public void UpdatePassenger(Passenger passenger, int id)
+        {
+            try
+            {
+                User userToUpdate = users.Where(u => u._id == id).First();
+
+                if (userToUpdate is Passenger passengerToUpdate)
+                {
+                    passengerToUpdate._wallet = passenger._wallet;
+                    passengerToUpdate._name = passenger._name;
+                    passengerToUpdate._location = passenger._location;
+                    passengerToUpdate._password = passenger._password;
+                    //passengerToUpdate._rides = passenger._rides;
+                    //passengerToUpdate._rides.Add(passenger._rides.First());
+                    SaveToFile();
+                }
+                else
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+        }
+
+        public User FindUser(int id)
+        {
+            return users.Where(u => u._id == id).First();
+        }
+
+        public bool FindUsername(string username)
+        {
+            User user = users.Where(u => u._name == username).First();
+            if (user != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool CheckPassword(string username, string password)
+        {
+            User user = users.Where(u => u._name == username).First();
+            if (user._password == password)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public int GetUserID(string username)
+        {
+            User user = users.Where(u => u._name == username).First();
+            return user._id;
+        }
     }
 }

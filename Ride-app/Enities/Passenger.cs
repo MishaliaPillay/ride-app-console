@@ -12,7 +12,7 @@ namespace Ride_app.Enities
         public List<Ride> _rides { get; set; }
 
         public Passenger(User user)
-            : base(user._wallet, user._location, user._name, user._password)
+            : base(user._wallet, user._location, user._name, user._password, user._id, user._isDriver)
         {
             _rides = new List<Ride>();
         }

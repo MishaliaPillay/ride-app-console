@@ -13,7 +13,7 @@ namespace Ride_app.Enities
         public float _rating { get; set; }
 
         public Driver(User user)
-            : base(user._wallet, user._location, user._name, user._password)
+            : base(user._wallet, user._location, user._name, user._password, user._id, user._isDriver)
         {
             _isAvailable = true;
             _completedRides = new List<Ride>();

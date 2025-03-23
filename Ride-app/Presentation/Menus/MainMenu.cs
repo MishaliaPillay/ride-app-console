@@ -9,6 +9,7 @@ namespace Ride_app.Presentation.Menus
 {
     public class MainMenu
     {
+        public int activeID;
         UserController userController = new UserController();
         public void MainMenuOptions()
         {
@@ -19,6 +20,15 @@ namespace Ride_app.Presentation.Menus
                 if (input == "2")
                 {
                     userController.CreateUser();
+                }
+                else if (input == "3")
+                {
+                    userController.UpdateUser();
+                }
+                else if (input == "1")
+                {
+                    activeID = userController.SignIn();
+                    Console.WriteLine("Signed in as user #" + activeID);
                 }
             }
         }

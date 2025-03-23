@@ -1,1 +1,42 @@
-
+[
+  {
+    "_isAvailable": true,
+    "_completedRides": [],
+    "_rating": 0.0,
+    "_location": {
+      "_latitude": 0.0,
+      "_longitude": 0.0
+    },
+    "_name": "Kevin",
+    "_password": "111",
+    "_wallet": 100.50,
+    "_id": 0,
+    "_isDriver": true
+  },
+  {
+    "_rides": [],
+    "_location": {
+      "_latitude": 0.0,
+      "_longitude": 0.0
+    },
+    "_name": "Mishi",
+    "_password": "14",
+    "_wallet": 100.50,
+    "_id": 1,
+    "_isDriver": false
+  },
+  {
+    "_isAvailable": true,
+    "_completedRides": [],
+    "_rating": 0.0,
+    "_location": {
+      "_latitude": 0.0,
+      "_longitude": 0.0
+    },
+    "_name": "Wyatt",
+    "_password": "MEOW",
+    "_wallet": 100.50,
+    "_id": 2,
+    "_isDriver": true
+  }
+]
