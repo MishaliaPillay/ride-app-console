@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mishalia Pillay\\Desktop\\Console-App\\ride-app-console\\Ride-app\\Ride-app.csproj": {}
+    "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Ride-app.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mishalia Pillay\\Desktop\\Console-App\\ride-app-console\\Ride-app\\Ride-app.csproj": {
+    "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Ride-app.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mishalia Pillay\\Desktop\\Console-App\\ride-app-console\\Ride-app\\Ride-app.csproj",
+        "projectUniqueName": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Ride-app.csproj",
         "projectName": "Ride-app",
-        "projectPath": "C:\\Users\\Mishalia Pillay\\Desktop\\Console-App\\ride-app-console\\Ride-app\\Ride-app.csproj",
+        "projectPath": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Ride-app.csproj",
         "packagesPath": "C:\\Users\\Mishalia Pillay\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mishalia Pillay\\Desktop\\Console-App\\ride-app-console\\Ride-app\\obj\\",
+        "outputPath": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

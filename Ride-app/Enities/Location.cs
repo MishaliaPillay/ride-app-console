@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 using Ride_app.Enities;
 namespace Ride_app.Enities
 {
-    internal class Location
+    public class Location
     {
-        private float _latitude { get; set; }
-        private float _longitude { get; set; }
+        public float _latitude { get; set; }
+        public float _longitude { get; set; }
+
+        public Location(float latitude, float longitude)
+        {
+            _latitude = latitude;
+            _longitude = longitude;
+        }
     }
 }

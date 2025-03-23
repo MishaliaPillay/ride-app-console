@@ -10,8 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Application\UseCases\" />
-    <Folder Include="Infrastructure\Services\" />
-    <Folder Include="Infrastructure\Repositories\" />
   </ItemGroup>
 
   <ItemGroup>

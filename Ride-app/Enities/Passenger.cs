@@ -7,8 +7,14 @@ using Ride_app.Enities;
 
 namespace Ride_app.Enities
 {
-    internal class Passenger : User
+    public class Passenger : User
     {
-        private List<Ride> _rides { get; set; }
+        public List<Ride> _rides { get; set; }
+
+        public Passenger(User user)
+            : base(user._wallet, user._location, user._name, user._password)
+        {
+            _rides = new List<Ride>();
+        }
     }
 }

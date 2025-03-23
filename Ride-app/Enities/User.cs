@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace Ride_app.Enities
 {
-    internal class User
+    public class User
     {
-        private decimal _wallet { get; set; }
-        private Location _location { get; set; }
-        private string _name { get; set; }
-        private string _password { get; set; }
 
+        public Location _location { get; set; }
+        public string _name { get; set; }
+        public string _password { get; set; }
+        public decimal _wallet { get; set; }
+
+        public User(decimal wallet, Location location, string name, string password)
+        {
+            _wallet = wallet;
+            _location = location;
+            _name = name;
+            _password = password;
+        }
     }
 }
