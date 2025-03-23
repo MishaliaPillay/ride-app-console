@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ride_app.Enities;
+using Ride_app.Infrastructure.Repositories;
 using Ride_app.Infrastructure.Services;
 
 namespace Ride_app.Presentation.Controllers
 {
     public class UserController
     {
+        public static int activeID = -1;
         UserService userService = new UserService();
 
         public void CreateUser()
@@ -36,16 +39,14 @@ namespace Ride_app.Presentation.Controllers
         }
         public void UpdateUser()
         {
-            Console.Write("GetUserID");
-            int id = int.Parse(Console.ReadLine());
 
-            if (userService.IsDriver(id))
+            if (userService.IsDriver(activeID))
             {
-                UpdateDriver(id);
+                UpdateDriver(activeID);
             }
             else
             {
-                UpdatePassenger(id);
+                UpdatePassenger(activeID);
             }
         }
         public int SignIn()
@@ -68,46 +69,124 @@ namespace Ride_app.Presentation.Controllers
             }
             else
             {
-                Console.WriteLine("Signed in");
+                Console.WriteLine("Correct password");
+                activeID = userService.GetUserID(username);
+
+                Console.Write("UserController as " + activeID);
                 return userService.GetUserID(username);
             }
-
-
         }
         public void UpdateDriver(int id)
         {
-            Console.WriteLine("Update Availability");
-            int result = int.Parse(Console.ReadLine());
-            bool available;
-            if (result == 0)
-            {
-                available = true;
-            }
-            else
-            {
-                available = false;
-            }
-            Console.WriteLine("Update wallet: ");
-            decimal walletChange = decimal.Parse(Console.ReadLine());
-            Console.WriteLine("Change xPos: ");
-            float xPos = int.Parse(Console.ReadLine());
-            Console.WriteLine("Change yPos: ");
-            float yPos = int.Parse(Console.ReadLine());
+            Console.WriteLine("1 - Update balance");
+            Console.WriteLine("2 - Update location");
+            Console.WriteLine("3 - Update Availability");
+            int action = int.Parse(Console.ReadLine());
 
-            //userService.UpdateDriver(walletChange, xPos, yPos, available, id);
+            switch (action)
+            {
+                case 1:
+                    {
+                        UpdateDriverWallet();
+                        break;
+                    }
+                case 2:
+                    {
+                        UpdateDriverLocation();
+                        break;
+                    }
+                case 3:
+                    {
+                        UpdateDriverAvailability(false);
+                        break;
+                    }
+            }
 
         }
         public void UpdatePassenger(int id)
         {
+            Console.WriteLine("1 - Update balance");
+            Console.WriteLine("2 - Update location");
+            int action = int.Parse(Console.ReadLine());
+
+            switch (action)
+            {
+                case 1:
+                    {
+                        UpdatePassengerWallet();
+                        break;
+                    }
+                case 2:
+                    {
+                        UpdatePassengerLocation();
+                        break;
+                    }
+            }
+        }
+        public void CreateRideRequest()
+        {
+
+            Console.Write("UserController as " + activeID);
+            //Console.Clear();
+
+            Console.WriteLine("x - Select start location: ");
+            float xStart = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("y - Select start location: ");
+            float yStart = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("x - Select dropoff location: ");
+            float xEnd = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("y - Select dropoff location: ");
+            float yEnd = float.Parse(Console.ReadLine());
+
+            Console.Write("UserController as " + activeID);
+
+            userService.CreatePassengerRideRequest(xStart, yStart, xEnd, yEnd, activeID);
+        }
+        public void UpdatePassengerWallet()
+        {
             Console.WriteLine("Update wallet: ");
             decimal walletChange = decimal.Parse(Console.ReadLine());
+            Console.Clear();
+
+            userService.UpdatePassengerWallet(walletChange, activeID);
+        }
+        public void UpdatePassengerLocation()
+        {
             Console.WriteLine("Change xPos: ");
             float xPos = int.Parse(Console.ReadLine());
             Console.WriteLine("Change yPos: ");
             float yPos = int.Parse(Console.ReadLine());
 
-            //userService.UpdatePassenger(walletChange, xPos, yPos, id);
+            userService.UpdatePassengerLocation(xPos, yPos, activeID);
+        }
+        public void UpdateDriverWallet()
+        {
+            Console.WriteLine("Update wallet: ");
+            decimal walletChange = decimal.Parse(Console.ReadLine());
+            Console.Clear();
 
+            userService.UpdateDriverWallet(walletChange, activeID);
+        }
+        public void UpdateDriverLocation()
+        {
+            Console.WriteLine("Change xPos: ");
+            float xPos = int.Parse(Console.ReadLine());
+            Console.WriteLine("Change yPos: ");
+            float yPos = int.Parse(Console.ReadLine());
+
+            userService.UpdateDriverLocation(xPos, yPos, activeID);
+        }
+        public void UpdateDriverAvailability(bool isAvailable)
+        {
+            userService.UpdateDriverAvailability(isAvailable, activeID);
+        }
+        public bool CheckUserDriver()
+        {
+            return userService.IsDriver(activeID);
         }
     }
 }
+

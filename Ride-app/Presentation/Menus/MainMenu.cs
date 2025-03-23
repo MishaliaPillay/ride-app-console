@@ -11,11 +11,15 @@ namespace Ride_app.Presentation.Menus
     {
         public int activeID;
         UserController userController = new UserController();
+        DriverMenu driverMenu = new DriverMenu();
+        PassengerMenu passengerMenu = new PassengerMenu();
+
         public void MainMenuOptions()
         {
             while (true)
             {
-                Console.WriteLine("1 - Sign in /n 2 - Sign Up");
+                Console.WriteLine("1 - Sign in");
+                Console.WriteLine("2 - Sign Up");
                 string input = Console.ReadLine();
                 if (input == "2")
                 {
@@ -29,6 +33,14 @@ namespace Ride_app.Presentation.Menus
                 {
                     activeID = userController.SignIn();
                     Console.WriteLine("Signed in as user #" + activeID);
+                    if (!userController.CheckUserDriver())
+                    {
+                        passengerMenu.ShowPassengerMenu();
+                    }
+                    else
+                    {
+                        driverMenu.ShowDriverMenu();
+                    }
                 }
             }
         }

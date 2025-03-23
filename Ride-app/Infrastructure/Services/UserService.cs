@@ -25,6 +25,24 @@ namespace Ride_app.Infrastructure.Services
             userRepository.AddNewDriver(driver);
             id++;
         }
+        public void CreatePassengerRideRequest(float xStart, float yStart, float xEnd, float yEnd, int id)
+        {
+            Console.WriteLine("userservice as " + id);
+            Location pickup = new Location(xStart, yStart);
+            Location dropoff = new Location(xEnd, yEnd);
+            Ride newRide = new Ride(pickup, dropoff);
+            userRepository.AddUserRide(id, newRide);
+
+            //Console.WriteLine("Getting user ref from storage");
+            //User userToCheck = userRepository.FindUser(id);
+
+            //Console.WriteLine("Gotten user ref from storage");
+            //if (userToCheck is Passenger passengerToCheck)
+            //{
+            //    passengerToCheck._rides.Add(newRide);
+            //    userRepository.UpdatePassenger(passengerToCheck, id);
+            //}
+        }
         public void CreatePassenger(string username, string password, decimal wallet, Location location)
         {
             User user = new User(wallet, location, username, password, id, false);
@@ -34,7 +52,7 @@ namespace Ride_app.Infrastructure.Services
             id++;
         }
 
-        public void UpdatePassengerWallet(decimal wallet, float xPos, float yPos, int id)
+        public void UpdatePassengerWallet(decimal wallet, int id)
         {
             User userToCheck = userRepository.FindUser(id);
             if (userToCheck is Passenger passengerToCheck)

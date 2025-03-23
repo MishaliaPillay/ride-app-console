@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Ride-app")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91197c75edd006d5e205d3a791c57482bcd73e11")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ba92d5804d5ba611436b7f7b02f3648c5cf1b7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Ride-app")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Ride-app")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
