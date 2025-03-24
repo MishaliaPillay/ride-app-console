@@ -99,3 +99,12 @@ ride-app-console/
 
 ```
 
+## Details on the project
+
+- Pythagoras Theorem to calculate distances.
+- Data is stored in JSON files 
+     -  Driver and Passenger Data saved to data.json
+     -  Rides Stored in rides.json
+
+
+
