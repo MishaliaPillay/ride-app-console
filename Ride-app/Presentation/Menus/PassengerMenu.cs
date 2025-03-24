@@ -11,7 +11,7 @@ namespace Ride_app.Presentation.Menus
 {
     public class PassengerMenu
     {
-        UserController userController = new UserController();
+        private readonly UserController userController = new UserController();
         public PassengerMenu()
         {
             this.userController = userController;
@@ -20,7 +20,7 @@ namespace Ride_app.Presentation.Menus
         {
 
             string userName = userController.GetUsername();
-            Console.Clear();
+
             Console.WriteLine("--- Passenger Dashboard --- " + userName);
             Console.WriteLine("1 - Request a ride");
             Console.WriteLine("2 - Rate previous ride");
@@ -33,6 +33,7 @@ namespace Ride_app.Presentation.Menus
             {
                 case 1:
                     {
+                        Console.Clear();
                         RequestRide();
                         break;
                     }
@@ -79,7 +80,7 @@ namespace Ride_app.Presentation.Menus
             ShowPassengerMenu();
         }
 
-        public void NoPreviousRides()
+        public static void NoPreviousRides()
         {
             Console.Clear();
             Console.WriteLine("You have not completed an rides yet. Come back when you have");
@@ -92,7 +93,7 @@ namespace Ride_app.Presentation.Menus
         }
         public void ViewWallet()
         {
-            //Console.Clear();
+
             decimal walletValue = userController.GetUserWallet();
             Console.WriteLine("Balance: " + " R " + Math.Round(walletValue, 2));
             Console.WriteLine("1 - Add to wallet");
@@ -108,6 +109,7 @@ namespace Ride_app.Presentation.Menus
                     }
                 case 2:
                     {
+                        Console.Clear();
                         ShowPassengerMenu();
                         break;
                     }
@@ -122,7 +124,7 @@ namespace Ride_app.Presentation.Menus
         }
         public void RequestRide()
         {
-            //Console.Clear();
+
             userController.CreateRideRequest();
             ShowPassengerMenu();
         }

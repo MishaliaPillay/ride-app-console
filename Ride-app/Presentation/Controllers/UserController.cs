@@ -9,6 +9,7 @@ using Ride_app.Enities;
 using Ride_app.Infrastructure.Repositories;
 using Ride_app.Infrastructure.Services;
 using Ride_app.Presentation.Menus;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Ride_app.Presentation.Controllers
 {
@@ -91,7 +92,9 @@ namespace Ride_app.Presentation.Controllers
         }
         public int SignIn()
         {
+
             Console.WriteLine("User Sign in: ");
+            Console.WriteLine("");
             Console.Write("Username: ");
             string username = Console.ReadLine();
             if (!userService.CheckUsernameExists(username))
@@ -178,30 +181,25 @@ namespace Ride_app.Presentation.Controllers
         {
             return userService.GetDriverAvailability(activeID);
         }
-        //public void ToggleDriverAvailability()
-        //{
-        //    Console.WriteLine("Controller");
-        //    userService.ToggleDriverAvailability(activeID);
-        //}
+
 
         //This allows passengers to create rides
         public void CreateRideRequest()
         {
 
-            // Console.Write("UserController as " + activeID);
-            ////Console.Clear
+
             Console.WriteLine("Please set the positions of the start location: ");
             Console.Write("x Start : ");
-            float xStart = float.Parse(Console.ReadLine());
+            float xStart = float.Parse(Console.ReadLine()!);
 
             Console.Write("y Start : ");
-            float yStart = float.Parse(Console.ReadLine());
+            float yStart = float.Parse(Console.ReadLine()!);
             Console.WriteLine("Please set the positions of the dropoff location: ");
             Console.Write("x DropOff : ");
-            float xEnd = float.Parse(Console.ReadLine());
+            float xEnd = float.Parse(Console.ReadLine()!);
 
             Console.Write("y DropOff: ");
-            float yEnd = float.Parse(Console.ReadLine());
+            float yEnd = float.Parse(Console.ReadLine()!);
 
             bool canAfford = userService.VerifyPassengerWalletBalance(activeID, xStart, yStart, xEnd, yEnd);
 
@@ -225,9 +223,9 @@ namespace Ride_app.Presentation.Controllers
         {
             Console.WriteLine("Update wallet: ");
             decimal walletChange = decimal.Parse(Console.ReadLine());
-            //Console.Clear();
-
-            userService.UpdatePassengerWallet(walletChange, activeID);
+            decimal userCurrentAmount = GetUserWallet();
+            userService.UpdatePassengerWallet(userCurrentAmount + walletChange, activeID);
+            Console.Clear();
         }
         public void UpdatePassengerLocation()
         {
@@ -331,9 +329,9 @@ namespace Ride_app.Presentation.Controllers
 
             foreach (Ride r in userRides)
             {
-                Console.WriteLine(r._rate.ToString() + " : " + "(" + r._pickUp._latitude.ToString() + ", "
+                Console.WriteLine("Price: " + "R" + Math.Round(r._rate, 2) + " , " + "Location: " + "(" + r._pickUp._latitude.ToString() + ", "
                     + r._pickUp._longitude.ToString() + ") tp (" + r._dropOff._latitude.ToString() + ", "
-                    + r._dropOff._longitude.ToString() + ") : " + r._rating);
+                    + r._dropOff._longitude.ToString() + ") ,  " + "Rating: " + r._rating);
             }
             Console.WriteLine("0 - Exit");
             Console.ReadLine();

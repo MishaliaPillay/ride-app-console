@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ride_app.Presentation.Controllers;
 using Ride_app.Enities;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Ride_app.Presentation.Menus
 {
@@ -63,9 +64,9 @@ namespace Ride_app.Presentation.Menus
         public void ViewWallet()
         {
             decimal walletValue = userController.GetUserWallet();
-            Console.WriteLine("Show balance here: " + walletValue);
+            Console.WriteLine("Balance: " + "R" + Math.Round(walletValue, 2));
             Console.WriteLine("1 - Exit");
-            int action = int.Parse(Console.ReadLine());
+            int action = int.Parse(Console.ReadLine()!);
 
             switch (action)
             {
