@@ -117,3 +117,26 @@ ride-app-console/
     ```
 --
 
+## Screens in the app
+### Validation Login Page
+![image](https://github.com/user-attachments/assets/ea98e068-4ab5-4599-8605-7f49c5580f50)
+
+### User Registration
+ ![image](https://github.com/user-attachments/assets/e6dd8555-4ecb-496f-be2d-7b5a569b5e38)
+
+### Driver Dashboard
+![image](https://github.com/user-attachments/assets/a302289c-dad2-4fff-9d38-fc3f9f4ea480)
+
+### Driver View Available rides 
+1![image](https://github.com/user-attachments/assets/a81f4055-bacc-436e-9526-abd7eda24da3)
+
+### Passenger Dashboard
+![image](https://github.com/user-attachments/assets/8ccbd8e7-7e00-40f5-ba8f-6460315dee20)
+
+### Passenger Request Ride
+1![image](https://github.com/user-attachments/assets/4b59c56b-a7ce-4457-b151-4a6c46f2481b)
+
+### Passenger Views ride history
+![image](https://github.com/user-attachments/assets/21890572-663a-4ba7-b9e4-3590a15c42de)
+
+
