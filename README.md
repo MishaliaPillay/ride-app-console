@@ -105,6 +105,15 @@ ride-app-console/
 - Data is stored in JSON files 
      -  Driver and Passenger Data saved to data.json
      -  Rides Stored in rides.json
-
-
+-Structure to follow for adding in functionality
+   ```bash
+          Menu 
+            |
+      UserController
+        /           \
+     UserService  -- RideController
+         /     \        /
+     UserRepo  Ride Repo
+    ```
+--
 
