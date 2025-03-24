@@ -50,14 +50,11 @@ namespace Ride_app.Infrastructure.Repositories
 
         public void AddNewRide(Ride ride)
         {
-            Console.WriteLine("Creating a new ride now");
             if (File.Exists(JsonFilePath))
             {
                 rides.Add(ride);
 
                 SaveToFile();
-
-                Console.WriteLine("New ride successfully created");
             }
         }
         public void SaveToFile()

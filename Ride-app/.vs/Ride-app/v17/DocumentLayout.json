@@ -3,56 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\data\\data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:data\\data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\data\\rides.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:data\\rides.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\presentation\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:presentation\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\presentation\\menus\\drivermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:presentation\\menus\\drivermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\presentation\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:presentation\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\services\\ridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\services\\ridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\repositories\\riderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\repositories\\riderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\repositories\\driverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\repositories\\driverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\presentation\\menus\\passengermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:presentation\\menus\\passengermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\repositories\\riderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\repositories\\riderepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\enities\\ride.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:enities\\ride.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\services\\ridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\services\\ridecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\repositories\\passengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\repositories\\passengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\data\\data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:data\\data.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\presentation\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:presentation\\menus\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\infrastructure\\repositories\\driverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:infrastructure\\repositories\\driverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\enities\\driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:enities\\driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\presentation\\menus\\drivermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:presentation\\menus\\drivermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\presentation\\menus\\passengermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:presentation\\menus\\passengermenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\data\\rides.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:data\\rides.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|c:\\users\\mishalia pillay\\desktop\\ride-app-console\\ride-app\\enities\\ride.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{708E5D73-3391-4F65-84FA-1F1513B20D1E}|Ride-app.csproj|solutionrelative:enities\\ride.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -64,34 +68,6 @@
           "DockedWidth": 200,
           "SelectedChildIndex": 13,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "rides.json",
-              "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\rides.json",
-              "RelativeDocumentMoniker": "Data\\rides.json",
-              "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\rides.json",
-              "RelativeToolTip": "Data\\rides.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-23T11:20:57.986Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "data.json",
-              "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\data.json",
-              "RelativeDocumentMoniker": "Data\\data.json",
-              "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\data.json",
-              "RelativeToolTip": "Data\\data.json",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-22T16:40:33.648Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
@@ -106,7 +82,48 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "rides.json",
+              "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\rides.json",
+              "RelativeDocumentMoniker": "Data\\rides.json",
+              "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\rides.json",
+              "RelativeToolTip": "Data\\rides.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-23T11:20:57.986Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "data.json",
+              "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\data.json",
+              "RelativeDocumentMoniker": "Data\\data.json",
+              "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\data.json",
+              "RelativeToolTip": "Data\\data.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-22T16:40:33.648Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PassengerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Infrastructure\\Repositories\\PassengerRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\PassengerRepository.cs",
+              "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Infrastructure\\Repositories\\PassengerRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\PassengerRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T19:52:50.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "DriverRepository.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Infrastructure\\Repositories\\DriverRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\DriverRepository.cs",
@@ -119,20 +136,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Infrastructure\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAJIAAAAAAAAAAAAUwKMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwHgAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T18:04:12.152Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "Ride.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Enities\\Ride.cs",
               "RelativeDocumentMoniker": "Enities\\Ride.cs",
@@ -145,20 +162,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "RideRepository.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Infrastructure\\Repositories\\RideRepository.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Repositories\\RideRepository.cs",
               "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Infrastructure\\Repositories\\RideRepository.cs",
               "RelativeToolTip": "Infrastructure\\Repositories\\RideRepository.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAqwBQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswA8AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T17:50:02.566Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "PassengerMenu.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Presentation\\Menus\\PassengerMenu.cs",
               "RelativeDocumentMoniker": "Presentation\\Menus\\PassengerMenu.cs",
@@ -171,20 +188,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "Driver.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Enities\\Driver.cs",
               "RelativeDocumentMoniker": "Enities\\Driver.cs",
               "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Enities\\Driver.cs",
               "RelativeToolTip": "Enities\\Driver.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAsAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T17:39:33.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Presentation\\Menus\\MainMenu.cs",
               "RelativeDocumentMoniker": "Presentation\\Menus\\MainMenu.cs",
@@ -197,39 +214,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 0,
               "Title": "DriverMenu.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Presentation\\Menus\\DriverMenu.cs",
               "RelativeDocumentMoniker": "Presentation\\Menus\\DriverMenu.cs",
               "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Presentation\\Menus\\DriverMenu.cs",
               "RelativeToolTip": "Presentation\\Menus\\DriverMenu.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAswEkAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAADgvx4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T17:18:41.763Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Infrastructure\\Services\\UserService.cs",
               "RelativeDocumentMoniker": "Infrastructure\\Services\\UserService.cs",
               "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Infrastructure\\Services\\UserService.cs",
               "RelativeToolTip": "Infrastructure\\Services\\UserService.cs",
-              "ViewState": "AgIAALoAAAAAAAAAAAAowN0AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAuwKUAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T17:11:46.374Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Presentation\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Presentation\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Presentation\\Controllers\\UserController.cs",
               "RelativeToolTip": "Presentation\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAO0AAAAAAAAAAAAlwPcAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAiwIYAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-23T17:02:04.1Z",
               "EditorCaption": ""

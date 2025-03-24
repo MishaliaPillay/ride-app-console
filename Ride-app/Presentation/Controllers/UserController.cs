@@ -124,12 +124,20 @@ namespace Ride_app.Presentation.Controllers
                     }
             }
         }
+        public bool GetAvailability()
+        {
+            return userService.GetDriverAvailability(activeID);
+        }
+        //public void ToggleDriverAvailability()
+        //{
+        //    Console.WriteLine("Controller");
+        //    userService.ToggleDriverAvailability(activeID);
+        //}
         public void CreateRideRequest()
         {
 
             Console.Write("UserController as " + activeID);
-            ////Console.Clear();
-
+            ////Console.Clear
             Console.WriteLine("x - Select start location: ");
             float xStart = float.Parse(Console.ReadLine());
 
@@ -142,7 +150,17 @@ namespace Ride_app.Presentation.Controllers
             Console.WriteLine("y - Select dropoff location: ");
             float yEnd = float.Parse(Console.ReadLine());
 
-            userService.CreatePassengerRideRequest(xStart, yStart, xEnd, yEnd, activeID);
+            bool canAfford = userService.VerifyPassengerWalletBalance(activeID, xStart, yStart, xEnd, yEnd);
+
+            if (canAfford)
+            {
+                userService.CreatePassengerRideRequest(xStart, yStart, xEnd, yEnd, activeID);
+                Console.WriteLine("Ride requested successfully");
+            }
+            else
+            {
+                Console.WriteLine("Insufficient balance - please topup wallet");
+            }
         }
         public Decimal GetUserWallet()
         {
@@ -194,7 +212,6 @@ namespace Ride_app.Presentation.Controllers
         {
             return userService.GetUsername(activeID);
         }
-
         public List<Ride> GetDriverlessRides()
         {
             return userService.GetDriverlessRides(activeID);

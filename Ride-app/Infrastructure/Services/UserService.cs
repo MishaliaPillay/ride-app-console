@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using Ride_app.Application.Interfacse;
@@ -162,6 +163,45 @@ namespace Ride_app.Infrastructure.Services
         {
             return userRepository.GetUserLocation(id);
         }
+       
+        public bool GetDriverAvailability(int id)
+        {
+            try
+            {
+                User driverUser = userRepository.FindUser(id);
+                if (driverUser is Driver driver)
+                {
+                    return driver._isAvailable;
+                }
+                else
+                {
+                    { return false; }
+                    throw new Exception();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
+        public bool VerifyPassengerWalletBalance(int activeID, float xStart, float yStart, float xEnd, float yEnd)
+        {
+            Location start = new Location(xStart, yStart);
+            Location end = new Location(xEnd, yEnd);
+            Ride tempRide = new Ride(start, end);
+            decimal rideCost = rideController.CalculateRidePrice(tempRide);
+
+            User user = userRepository.FindUser(activeID);
+            if (user._wallet < rideCost)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public void CompleteRide(Ride ride)
         {
             User driverUser = userRepository.FindUser(ride._driverID);
@@ -172,7 +212,7 @@ namespace Ride_app.Infrastructure.Services
 
             passengerUser._wallet -= ride._rate;
             driverUser._wallet += ride._rate;
-
+            UpdateDriverLocation(ride._dropOff._latitude, ride._dropOff._longitude, ride._driverID);
             ride.isComplete = true;
 
             if (driverUser is Driver driver)
