@@ -15,10 +15,19 @@ namespace Ride_app.Presentation.Menus
         {
             //Console.Clear();
             string userName = userController.GetUsername();
+            bool isAvailable = userController.GetAvailability();
             Console.WriteLine("--- Driver Dashboard --- " + userName);
             Console.WriteLine("1 - View passenger rides");
             Console.WriteLine("2 - View Wallet");
-            Console.WriteLine("3 - Sign Out");
+            if (isAvailable)
+            {
+                Console.WriteLine("3 - Toggle availability - Available");
+            }
+            else
+            {
+                Console.WriteLine("3 - Toggle availability - Unavailable");
+            }
+            Console.WriteLine("0 - Sign Out");
             int action = int.Parse(Console.ReadLine());
 
             switch (action)
@@ -33,10 +42,15 @@ namespace Ride_app.Presentation.Menus
                         ViewWallet();
                         break;
                     }
-                //case 3:
-                //    {
-                //        return;
-                //    }
+                case 0:
+                    {
+                        return;
+                    }
+                case 3:
+                    {
+                        ToggleAvailability(!isAvailable);
+                        break;
+                    }
                 default:
                     {
                         Console.WriteLine("Not a valid option");
@@ -47,7 +61,6 @@ namespace Ride_app.Presentation.Menus
         }
         public void ViewWallet()
         {
-            //Console.Clear();
             decimal walletValue = userController.GetUserWallet();
             Console.WriteLine("Show balance here: " + walletValue);
             Console.WriteLine("1 - Exit");
@@ -72,6 +85,13 @@ namespace Ride_app.Presentation.Menus
         public void ViewRides()
         {
             userController.ViewDriverRides();
+            ShowDriverMenu();
+        }
+        public void ToggleAvailability(bool isAvailable)
+        {
+            Console.WriteLine("Menu");
+            userController.UpdateDriverAvailability(isAvailable);
+            ShowDriverMenu();
         }
     }
 }

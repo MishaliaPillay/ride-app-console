@@ -19,6 +19,14 @@ namespace Ride_app.Infrastructure.Repositories
         {
             LoadFromFile();
         }
+        public List<Ride> GetRideSummary(int id)
+        {
+            return rides.Where(r => (r._passengerID == id) && r.isComplete).ToList();
+        }
+        public Ride GetLatestRide(int id)
+        {
+            return rides.Where(r => r._passengerID == id).Last();
+        }
         public List<Ride> GetDriverlessRides()
         {
             return rides.Where(r => r._driverID == -1).ToList();
@@ -42,14 +50,11 @@ namespace Ride_app.Infrastructure.Repositories
 
         public void AddNewRide(Ride ride)
         {
-            Console.WriteLine("Creating a new ride now");
             if (File.Exists(JsonFilePath))
             {
                 rides.Add(ride);
 
                 SaveToFile();
-
-                Console.WriteLine("New ride successfully created");
             }
         }
         public void SaveToFile()
@@ -79,6 +84,10 @@ namespace Ride_app.Infrastructure.Repositories
                 Console.Error.WriteLine("Error updating ride: " + ex.ToString());
             }
 
+        }
+        public Ride GetRideByID(int id)
+        {
+            return rides.Where(r => r.rideID == id).FirstOrDefault();
         }
     }
 }

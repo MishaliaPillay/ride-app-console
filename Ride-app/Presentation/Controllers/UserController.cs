@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Ride_app.Enities;
@@ -123,12 +124,20 @@ namespace Ride_app.Presentation.Controllers
                     }
             }
         }
+        public bool GetAvailability()
+        {
+            return userService.GetDriverAvailability(activeID);
+        }
+        //public void ToggleDriverAvailability()
+        //{
+        //    Console.WriteLine("Controller");
+        //    userService.ToggleDriverAvailability(activeID);
+        //}
         public void CreateRideRequest()
         {
 
             Console.Write("UserController as " + activeID);
-            ////Console.Clear();
-
+            ////Console.Clear
             Console.WriteLine("x - Select start location: ");
             float xStart = float.Parse(Console.ReadLine());
 
@@ -141,7 +150,17 @@ namespace Ride_app.Presentation.Controllers
             Console.WriteLine("y - Select dropoff location: ");
             float yEnd = float.Parse(Console.ReadLine());
 
-            userService.CreatePassengerRideRequest(xStart, yStart, xEnd, yEnd, activeID);
+            bool canAfford = userService.VerifyPassengerWalletBalance(activeID, xStart, yStart, xEnd, yEnd);
+
+            if (canAfford)
+            {
+                userService.CreatePassengerRideRequest(xStart, yStart, xEnd, yEnd, activeID);
+                Console.WriteLine("Ride requested successfully");
+            }
+            else
+            {
+                Console.WriteLine("Insufficient balance - please topup wallet");
+            }
         }
         public Decimal GetUserWallet()
         {
@@ -193,16 +212,16 @@ namespace Ride_app.Presentation.Controllers
         {
             return userService.GetUsername(activeID);
         }
-
         public List<Ride> GetDriverlessRides()
         {
             return userService.GetDriverlessRides(activeID);
         }
-        public void ViewDriverRides()
+        public int ViewDriverRides()
         {
             int index = 1;
             List<Ride> availableRides = GetDriverlessRides();
 
+            Console.WriteLine("--- Start a ride ---");
 
             foreach (Ride ride in availableRides)
             {
@@ -211,6 +230,52 @@ namespace Ride_app.Presentation.Controllers
                 Console.WriteLine(index + " - " + passengerName + " : R" + ridePrice + ", is this far away: " + Math.Round(ridePrice / 10, 0));
                 index++;
             }
+
+            Console.WriteLine("0 - Exit");
+
+
+            int action = int.Parse(Console.ReadLine());
+            if (action == 0)
+            {
+                Console.WriteLine("Returning to driver dashboard");
+            }
+            else if (availableRides[action - 1] != null)
+            {
+                userService.AssignDriverToRide(activeID, availableRides[action - 1]);
+                UpdateRideStatus(availableRides[action - 1]);
+            }
+            else
+            {
+                Console.WriteLine("Error: Not an option");
+            }
+            return action;
+        }
+        public void UpdateRideStatus(Ride ride)
+        {
+            Console.Clear();
+            Console.WriteLine("Press anything to complete ride");
+            Console.ReadLine();
+            userService.CompleteRide(ride);
+        }
+        public void RateDriver()
+        {
+            Console.Clear();
+            Console.WriteLine("Give your last driver a rating");
+            int rating = int.Parse(Console.ReadLine());
+            userService.AssignDriverRating(activeID, rating);
+        }
+        public void GetRideSummary()
+        {
+            List<Ride> userRides = userService.GetRideSummary(activeID);
+
+            foreach (Ride r in userRides)
+            {
+                Console.WriteLine(r._rate.ToString() + " : " + "(" + r._pickUp._latitude.ToString() + ", "
+                    + r._pickUp._longitude.ToString() + ") tp (" + r._dropOff._latitude.ToString() + ", "
+                    + r._dropOff._longitude.ToString() + ") : " + r._rating);
+            }
+            Console.WriteLine("0 - Exit");
+            Console.ReadLine();
         }
     }
 }

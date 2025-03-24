@@ -27,7 +27,7 @@ namespace Ride_app.Infrastructure.Repositories
                 if (File.Exists(JsonFilePath))
                 {
                     string jsonData = File.ReadAllText(JsonFilePath);
-                    users = JsonConvert.DeserializeObject<List<User>>(jsonData) ?? new List<User>();
+                    users = JsonConvert.DeserializeObject<List<User>>(jsonData/*, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All }*/) ?? new List<User>();
                 }
             }
             catch (Exception ex)
@@ -39,10 +39,8 @@ namespace Ride_app.Infrastructure.Repositories
 
         public Decimal GetUserWallet(int id)
         {
-
             try
             {
-
                 User user = users.Where(u => u._id == id).FirstOrDefault();
                 return user._wallet;
             }
@@ -55,21 +53,34 @@ namespace Ride_app.Infrastructure.Repositories
 
         public void AddNewDriver(Driver driver)
         {
-            if (File.Exists(JsonFilePath))
+            try
             {
-                users.Add(driver);
-
-                SaveToFile();
+                if (File.Exists(JsonFilePath))
+                {
+                    users.Add(driver);
+                    SaveToFile();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex.Message);
             }
         }
 
         public void AddNewPassenger(Passenger passenger)
         {
-            if (File.Exists(JsonFilePath))
+            try
             {
-                users.Add(passenger);
+                if (File.Exists(JsonFilePath))
+                {
+                    users.Add(passenger);
+                    SaveToFile();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
 
-                SaveToFile();
             }
         }
 
@@ -77,9 +88,7 @@ namespace Ride_app.Infrastructure.Repositories
         {
             try
             {
-
-                Console.WriteLine("the list has this many objects - " + users.Count());
-                string JsonData = JsonConvert.SerializeObject(users, Formatting.Indented);
+                string JsonData = JsonConvert.SerializeObject(users, Formatting.Indented/*, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.All }*/);
                 File.WriteAllText(JsonFilePath, JsonData);
             }
             catch (Exception ex)
@@ -87,10 +96,26 @@ namespace Ride_app.Infrastructure.Repositories
                 Console.WriteLine($"Error saving to JSON file: {ex.Message}");
             }
         }
+        public void ToggleDriverAvailability(int id)
+        {
+            Console.WriteLine("Reposiroty " + id);
+            User userToUpdate = users.FirstOrDefault(u => u._id == id);
+            Console.WriteLine(userToUpdate._name);
+            Console.WriteLine(userToUpdate._isDriver);
+            if (userToUpdate is Driver driverToUpdate)
+            {
+                driverToUpdate._isAvailable = !driverToUpdate._isAvailable; SaveToFile();
+            }
+            else
+            {
+                Console.WriteLine("User not found for some reason");
+            }
+        }
         public void UpdateDriver(Driver driver, int id)
         {
             try
             {
+                Console.WriteLine("Repo");
                 User userToUpdate = users.Where(u => u._id == id).FirstOrDefault();
 
                 if (userToUpdate is Driver driverToUpdate)
@@ -109,9 +134,11 @@ namespace Ride_app.Infrastructure.Repositories
                     throw new Exception();
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
-
 
         public void UpdatePassenger(Passenger passenger, int id)
         {
@@ -133,16 +160,27 @@ namespace Ride_app.Infrastructure.Repositories
                     throw new Exception();
                 }
             }
-            catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
         public void AddUserRide(int id, int rideID)
         {
-            User user = users.Where(u => u._id == id).FirstOrDefault();
-            if (user is Passenger passenger)
+            try
             {
-                passenger.rideIDs.Add(rideID);
+                User user = users.Where(u => u._id == id).FirstOrDefault();
+                if (user is Passenger passenger)
+                {
+                    passenger.rideIDs.Add(rideID);
+                }
+                SaveToFile();
             }
-            SaveToFile();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
         }
         public User FindUser(int id)
         {
@@ -183,7 +221,6 @@ namespace Ride_app.Infrastructure.Repositories
         {
             try
             {
-
                 User user = users.Where(u => u._id == id).FirstOrDefault();
                 return user._location;
             }

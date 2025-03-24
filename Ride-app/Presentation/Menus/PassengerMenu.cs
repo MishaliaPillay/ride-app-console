@@ -21,8 +21,10 @@ namespace Ride_app.Presentation.Menus
             string userName = userController.GetUsername();
             Console.WriteLine("--- Passenger Dashboard --- " + userName);
             Console.WriteLine("1 - Request a ride");
-            Console.WriteLine("2 - View Wallet");
-            Console.WriteLine("3 - Sign Out");
+            Console.WriteLine("2 - Rate previous ride");
+            Console.WriteLine("3 - View Wallet");
+            Console.WriteLine("4 - View Wallet");
+            Console.WriteLine("5 - Sign Out");
             int action = int.Parse(Console.ReadLine());
 
             switch (action)
@@ -34,10 +36,20 @@ namespace Ride_app.Presentation.Menus
                     }
                 case 2:
                     {
-                        ViewWallet();
+                        RateDriver();
                         break;
                     }
                 case 3:
+                    {
+                        ViewWallet();
+                        break;
+                    }
+                case 4:
+                    {
+                        ViewRideHistory();
+                        break;
+                    }
+                case 5:
                     {
                         return;
                     }
@@ -47,6 +59,14 @@ namespace Ride_app.Presentation.Menus
                         break;
                     }
             }
+        }
+        public void ViewRideHistory()
+        {
+            userController.GetRideSummary();
+        }
+        public void RateDriver()
+        {
+            userController.RateDriver();
         }
         public void ViewWallet()
         {
