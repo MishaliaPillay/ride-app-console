@@ -26,7 +26,7 @@ namespace Ride_app.Presentation.Controllers
             decimal wallet = 100.50M;
             Location location = new Location(0, 0);
 
-            Console.Write("User or driver: ");
+            Console.Write("Passenger or driver: ");
             string role = Console.ReadLine();
 
             if (role == "Driver")
@@ -37,6 +37,7 @@ namespace Ride_app.Presentation.Controllers
             {
                 userService.CreatePassenger(username, password, wallet, location);
             }
+
         }
         public void UpdateUser()
         {
@@ -203,6 +204,10 @@ namespace Ride_app.Presentation.Controllers
         public void UpdateDriverAvailability(bool isAvailable)
         {
             userService.UpdateDriverAvailability(isAvailable, activeID);
+        }
+        public bool HasPreviousRides()
+        {
+            return userService.HasPreviousRides(activeID);
         }
         public bool CheckUserDriver()
         {
