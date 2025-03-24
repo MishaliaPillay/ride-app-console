@@ -9,6 +9,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\data.json" />
+    <None Remove="Data\Drivers.json" />
+    <None Remove="Data\Passengers.json" />
+    <None Remove="Data\rides.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Data\data.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Drivers.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\Passengers.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\rides.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Application\UseCases\" />
   </ItemGroup>
 

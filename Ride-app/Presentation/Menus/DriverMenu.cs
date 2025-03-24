@@ -10,12 +10,13 @@ namespace Ride_app.Presentation.Menus
 {
     public class DriverMenu
     {
-        UserController userController = new UserController();
+        readonly UserController userController = new UserController();
         public void ShowDriverMenu()
         {
-            //Console.Clear();
+
             string userName = userController.GetUsername();
             bool isAvailable = userController.GetAvailability();
+            Console.Clear();
             Console.WriteLine("--- Driver Dashboard --- " + userName);
             Console.WriteLine("1 - View passenger rides");
             Console.WriteLine("2 - View Wallet");

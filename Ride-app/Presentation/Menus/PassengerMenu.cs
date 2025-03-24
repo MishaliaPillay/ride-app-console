@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 using Ride_app.Infrastructure.Services;
 using Ride_app.Presentation.Controllers;
 
@@ -17,8 +18,9 @@ namespace Ride_app.Presentation.Menus
         }
         public void ShowPassengerMenu()
         {
-            //Console.Clear();
+
             string userName = userController.GetUsername();
+            Console.Clear();
             Console.WriteLine("--- Passenger Dashboard --- " + userName);
             Console.WriteLine("1 - Request a ride");
             Console.WriteLine("2 - Rate previous ride");
@@ -92,7 +94,7 @@ namespace Ride_app.Presentation.Menus
         {
             //Console.Clear();
             decimal walletValue = userController.GetUserWallet();
-            Console.WriteLine("Show balance here: " + walletValue);
+            Console.WriteLine("Balance: " + " R " + Math.Round(walletValue, 2));
             Console.WriteLine("1 - Add to wallet");
             Console.WriteLine("2 - Exit");
             int action = int.Parse(Console.ReadLine());

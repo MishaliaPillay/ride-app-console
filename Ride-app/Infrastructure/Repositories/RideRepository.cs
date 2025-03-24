@@ -13,7 +13,7 @@ namespace Ride_app.Infrastructure.Repositories
     {
         public static List<Ride> rides = new List<Ride>();
 
-        private static readonly string JsonFilePath = "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\rides.json";
+        private static readonly string JsonFilePath = "Data\\rides.json";
 
         public RideRepository()
         {

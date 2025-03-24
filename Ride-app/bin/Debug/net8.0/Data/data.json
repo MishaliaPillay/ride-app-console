@@ -1,8 +1,5 @@
 [
   {
-    "rideIDs": [
-      0
-    ],
     "_location": {
       "_latitude": 0.0,
       "_longitude": 0.0
@@ -14,11 +11,6 @@
     "_isDriver": false
   },
   {
-    "rideIDs": [
-      0
-    ],
-    "_isAvailable": true,
-    "_rating": [],
     "_location": {
       "_latitude": 8.0,
       "_longitude": 8.0
@@ -27,6 +19,28 @@
     "_password": "1",
     "_wallet": 114.6421356237310,
     "_id": 1,
+    "_isDriver": true
+  },
+  {
+    "_location": {
+      "_latitude": 0.0,
+      "_longitude": 0.0
+    },
+    "_name": "Ben",
+    "_password": "4",
+    "_wallet": 86.3578643762690,
+    "_id": 2,
+    "_isDriver": false
+  },
+  {
+    "_location": {
+      "_latitude": 2.0,
+      "_longitude": 2.0
+    },
+    "_name": "Kevin",
+    "_password": "4",
+    "_wallet": 114.6421356237310,
+    "_id": 3,
     "_isDriver": true
   }
 ]

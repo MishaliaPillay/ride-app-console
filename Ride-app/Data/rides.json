@@ -1,1 +1,18 @@
-
+[
+  {
+    "rideID": 0,
+    "_pickUp": {
+      "_latitude": 7.0,
+      "_longitude": 7.0
+    },
+    "_dropOff": {
+      "_latitude": 8.0,
+      "_longitude": 8.0
+    },
+    "_passengerID": 0,
+    "_driverID": 1,
+    "isComplete": true,
+    "_rating": 0,
+    "_rate": 14.1421356237310
+  }
+]
