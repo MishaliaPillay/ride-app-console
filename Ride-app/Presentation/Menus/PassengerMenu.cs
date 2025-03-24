@@ -23,7 +23,7 @@ namespace Ride_app.Presentation.Menus
             Console.WriteLine("1 - Request a ride");
             Console.WriteLine("2 - Rate previous ride");
             Console.WriteLine("3 - View Wallet");
-            Console.WriteLine("4 - View Wallet");
+            Console.WriteLine("4 - View Completed Rides");
             Console.WriteLine("5 - Sign Out");
             int action = int.Parse(Console.ReadLine());
 
@@ -66,7 +66,27 @@ namespace Ride_app.Presentation.Menus
         }
         public void RateDriver()
         {
-            userController.RateDriver();
+            if (userController.HasPreviousRides())
+            {
+                userController.RateDriver();
+            }
+            else
+            {
+                NoPreviousRides();
+            }
+            ShowPassengerMenu();
+        }
+
+        public void NoPreviousRides()
+        {
+            Console.Clear();
+            Console.WriteLine("You have not completed an rides yet. Come back when you have");
+            Console.WriteLine(" 0 - Return ");
+            int response = int.Parse(Console.ReadLine());
+            if (response == 0)
+            {
+                return;
+            }
         }
         public void ViewWallet()
         {

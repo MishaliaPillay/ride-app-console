@@ -111,6 +111,10 @@ namespace Ride_app.Infrastructure.Services
                 userRepository.UpdateDriver(driverToCheck, id);
             }
         }
+        public bool HasPreviousRides(int id)
+        {
+            return rideRepository.HasPreviousRides(id);
+        }
         public void UpdateDriverLocation(float xPos, float yPos, int id)
         {
             Location location = new Location(xPos, yPos);
@@ -163,7 +167,7 @@ namespace Ride_app.Infrastructure.Services
         {
             return userRepository.GetUserLocation(id);
         }
-       
+
         public bool GetDriverAvailability(int id)
         {
             try

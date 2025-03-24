@@ -27,6 +27,32 @@ namespace Ride_app.Infrastructure.Repositories
         {
             return rides.Where(r => r._passengerID == id).Last();
         }
+        public bool HasPreviousRides(int userID)
+        {
+            try
+            {
+                List<Ride> completedRides = rides.Where(r => (r._passengerID == userID) && (r.isComplete)).ToList();
+                if (completedRides.Count == 0)
+                {
+                    return false;
+                }
+                else if (completedRides.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception();
+                    return false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+        }
         public List<Ride> GetDriverlessRides()
         {
             return rides.Where(r => r._driverID == -1).ToList();
