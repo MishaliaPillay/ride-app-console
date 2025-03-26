@@ -13,7 +13,7 @@ namespace Ride_app.Infrastructure.Repositories
     {
         public static List<Ride> rides = new List<Ride>();
 
-        private static readonly string JsonFilePath = "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\rides.json";
+        private static readonly string JsonFilePath = "Data\\rides.json";
 
         public RideRepository()
         {
@@ -26,6 +26,32 @@ namespace Ride_app.Infrastructure.Repositories
         public Ride GetLatestRide(int id)
         {
             return rides.Where(r => r._passengerID == id).Last();
+        }
+        public bool HasPreviousRides(int userID)
+        {
+            try
+            {
+                List<Ride> completedRides = rides.Where(r => (r._passengerID == userID) && (r.isComplete)).ToList();
+                if (completedRides.Count == 0)
+                {
+                    return false;
+                }
+                else if (completedRides.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new Exception();
+                    return false;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
         }
         public List<Ride> GetDriverlessRides()
         {

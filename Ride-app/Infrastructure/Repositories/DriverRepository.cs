@@ -13,7 +13,7 @@ namespace Ride_app.Infrastructure.Repositories
 
         List<Driver> drivers = new List<Driver>();
 
-        private static readonly string JsonFilePath = "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\Drivers.json";
+        private static readonly string JsonFilePath = "Data\\Drivers.json";
 
         public void AddNewDriver(Driver newDriver)
         {
