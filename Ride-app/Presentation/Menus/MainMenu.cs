@@ -9,7 +9,6 @@ namespace Ride_app.Presentation.Menus
 {
     public class MainMenu
     {
-        public static int activeID;
         UserController userController = new UserController();
         DriverMenu driverMenu = new DriverMenu();
         PassengerMenu passengerMenu = new PassengerMenu();
@@ -18,7 +17,8 @@ namespace Ride_app.Presentation.Menus
         {
             while (true)
             {
-                //Console.Clear();
+
+                Console.WriteLine("Welcome to Ride App. Please select an option below.");
                 Console.WriteLine("1 - Sign in");
                 Console.WriteLine("2 - Add account");
                 int input = int.Parse(Console.ReadLine());
@@ -26,8 +26,15 @@ namespace Ride_app.Presentation.Menus
                 {
                     case 1:
                         {
-                            activeID = userController.SignIn();
-                            Console.WriteLine("Signed in as user #" + activeID);
+                            Console.Clear();
+                            MainMenuHelpers.activeID = userController.SignIn();
+                            if (MainMenuHelpers.activeID == -1)
+                            {
+                                Console.WriteLine("Login Failed");
+                                Console.WriteLine("---------------------------------------------------------------------");
+                                Console.WriteLine("");
+                                break;
+                            }
                             if (!userController.CheckUserDriver())
                             {
                                 passengerMenu.ShowPassengerMenu();
@@ -40,6 +47,7 @@ namespace Ride_app.Presentation.Menus
                         }
                     case 2:
                         {
+                            Console.Clear();
                             userController.CreateUser();
                             break;
                         }

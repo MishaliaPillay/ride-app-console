@@ -10,9 +10,9 @@ namespace Ride_app.Infrastructure.Repositories
 {
     public class PassengerRepository
     {
-        List<Passenger> passengers = new List<Passenger>();
+        readonly List<Passenger> passengers = new List<Passenger>();
 
-        private static readonly string JsonFilePath = "C:\\Users\\Mishalia Pillay\\Desktop\\ride-app-console\\Ride-app\\Data\\Passengers.json";
+        private static readonly string JsonFilePath = "Data\\Passengers.json";
 
         public void AddNewPassenger(Passenger newPassenger)
         {
